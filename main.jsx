@@ -68,3 +68,9 @@ var DisplayTable = React.createClass({
 });
  
 React.renderComponent(<InstantBox data={employees}/>,document.body);
+
+writeFile('myFile.txt', 'Lorem ipsum dolor...', function() {
+	alert('Success');
+}, function() {
+	alert('Error');
+});
