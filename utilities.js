@@ -60,3 +60,17 @@ function writeFile(filename, content, callbackSuccess, callbackFail) {
             callbackFail);
     }, callbackFail);
 }
+
+alert('Init app!');
+
+fileExists('myFile.txt',  function() {
+	alert('Exist');
+}, function() {
+	alert('Doesn\'t exist');
+});
+
+writeFile('myFile.txt', 'Lorem ipsum dolor...', function() {
+	alert('Success');
+}, function() {
+	alert('Error');
+});
