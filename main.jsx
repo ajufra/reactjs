@@ -9,7 +9,7 @@ var InstantBox = React.createClass({
 		//get query result
 		var queryResult=[];
 		this.props.data.forEach(function(person){
-			if(person.name.toLowerCase().indexOf(queryText)!=-1)
+			if(person.name.toLowerCase().indexOf(queryText.toLowerCase())!=-1)
 			queryResult.push(person);
 		});
 		
