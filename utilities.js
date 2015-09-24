@@ -61,7 +61,7 @@ function writeFile(filename, content, callbackSuccess, callbackFail) {
     }, callbackFail);
 }
 
-alert('Init app!');
+alert('Init app new!');
 
 fileExists('myFile.txt',  function() {
 	alert('Exist');
