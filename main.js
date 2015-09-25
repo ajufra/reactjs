@@ -67,6 +67,9 @@ var DisplayTable = React.createClass({
 		);
 	}
 });
+
+//Inicio
+document.addEventListener("deviceready", onDeviceReady, false);
  
-React.renderComponent(<InstantBox data={employees}/>,document.body);
+React.renderComponent(<InstantBox data={sourceJSON}/>,document.body);
 

@@ -1,5 +1,7 @@
 
 var APPPATH = 'Android/data/com.phonegap.ReactJS/files';
+
+var sourceJSON = ''; 
 /*
 if (typeof app !== 'undefined') {
     alert("utilities.js typeof app !== undefined");
@@ -113,7 +115,7 @@ function readDataUrl(file) {
 function readAsText(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
-        alert("Read as text - " + evt.target.result);
+        sourceJSON = evt.target.result;
     };
     reader.readAsText(file);
 }
@@ -122,9 +124,6 @@ function fail(evt) {
     console.log(evt.target.error.code);
 }
 //----------------------------------------------------------------------------------------------------
-
-//Inicio
-document.addEventListener("deviceready", onDeviceReady, false);
 
 //Función de escritura y lectura de archivos
 function onDeviceReady() {
