@@ -103,11 +103,42 @@ function win(file) {
     reader.readAsText(file);
 };
 
-var fail = function(evt) {
-    alert(error.code);
-};
+//------------------------------------
 
+function gotFS(fileSystem) {
+        fileSystem.root.getFile("readme.txt", null, gotFileEntry, fail);
+    }
 
+    function gotFileEntry(fileEntry) {
+        fileEntry.file(gotFile, fail);
+    }
+
+    function gotFile(file){
+        //readDataUrl(file);
+        readAsText(file);
+    }
+
+    function readDataUrl(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            console.log("Read as data URL");
+            console.log(evt.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function readAsText(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            alert("Read as text - " + evt.target.result);
+        };
+        reader.readAsText(file);
+    }
+
+    function fail(evt) {
+        console.log(evt.target.error.code);
+    }
+//------------------------------------
 
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -128,7 +159,11 @@ function onDeviceReady() {
     //Se crea el archivo
     writeFile('myFile.txt', 'Lorem ipsum dolor 2...', function() {
         alert('File created succesfully!!!');
-        win(APPPATH+'/myFile.txt');
+        //win(APPPATH+'/myFile.txt');
+
+         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+
+
     }, function() {
         alert('Error creating file!!!');
     });
