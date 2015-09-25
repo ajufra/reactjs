@@ -1,13 +1,13 @@
-/*
-var APPPATH = 'Android/data/com.phonegap.ReactJS/files';
 
+var APPPATH = 'Android/data/com.phonegap.ReactJS/files';
+/*
 if (typeof app !== 'undefined') {
     alert("utilities.js typeof app !== undefined");
     app.initialize();
 }else{
     alert("utilities.js typeof app === undefined");
 }
-
+*/
 function toJSON(data) {
     try {
         if (data !== null && data !== '') {
@@ -65,7 +65,6 @@ function writeFile(filename, content, callbackSuccess, callbackFail) {
     }, callbackFail);
 }
 
-*/
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -73,5 +72,18 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //
 function onDeviceReady() {
     alert('onready');
-    //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+
+
+    fileExists('myFile.txt',  function() {
+        alert('Exist');
+    }, function() {
+        alert('Doesn\'t exist');
+    });
+
+    writeFile('myFile.txt', 'Lorem ipsum dolor...', function() {
+        alert('Success');
+    }, function() {
+        alert('Error');
+    });
+
 }
