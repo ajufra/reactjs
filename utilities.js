@@ -93,11 +93,13 @@ function gotFile(fileEntry) {
 */
 
 function win(file) {
+    alert('on win');
     var reader = new FileReader();
+    alert('after reader');
     reader.onloadend = function(evt) {
-        console.log("read success");
-        console.log(evt.target.result);
+        alert(evt.target.result);
     };
+    alert('before readAsText');
     reader.readAsText(file);
 };
 
