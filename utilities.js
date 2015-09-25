@@ -130,7 +130,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 
     //Se crea el archivo
-    writeFile('myFile.txt', 'Lorem ipsum dolor 2...', function() {
+    writeFile('myFile.txt', employees, function() {
         console.log('File created succesfully!!!');
     }, function() {
         alert('Error creating file!!!');

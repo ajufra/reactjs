@@ -70,21 +70,3 @@ var DisplayTable = React.createClass({
  
 React.renderComponent(<InstantBox data={employees}/>,document.body);
 
-
-/*
-alert('Init app new 2!');
-
-fileExists('myFile.txt',  function() {
-	alert('Exist');
-}, function() {
-	alert('Doesn\'t exist');
-});
-
-writeFile('myFile.txt', 'Lorem ipsum dolor...', function() {
-	alert('Success');
-}, function() {
-	alert('Error');
-});
-
-*/
-
