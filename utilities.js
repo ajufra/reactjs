@@ -73,6 +73,23 @@ function writeFile(filename, content, callbackSuccess, callbackFail) {
 }
 
 
+
+function gotFile(fileEntry) {
+
+    fileEntry.file(function(file) {
+        var reader = new FileReader();
+
+        reader.onloadend = function(e) {
+            alert(this.result);
+        }
+
+        reader.readAsText(file);
+    });
+
+}
+
+
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 // device APIs are available
@@ -80,15 +97,18 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 
     //Se verifica si el archivo existe
+    /*
     fileExists('myFile.txt',  function(content) {
         alert('File Exist - ' + content);
     }, function() {
         alert('File Doesn\'t exist');
     });
+    */
 
     //Se crea el archivo
     writeFile('myFile.txt', 'Lorem ipsum dolor 2...', function() {
         alert('File created succesfully!!!');
+        window.resolveLocalFileSystemURL(APPPATH + "/myFile.txt", gotFile, fail);
     }, function() {
         alert('Error creating file!!!');
     });
