@@ -38,12 +38,18 @@ function getDirectory(callbackSuccess, callbackFail) {
 
 function fileExists(filename, callbackSuccess, callbackFail) {
     getDirectory(function(file) {
-        file.getFile(
-            filename, {
-                create: false
-            },
-            callbackSuccess,
-            callbackFail);
+         file.getFile( filename, { create: false }, function(fileEntry) {
+            if (callbackSuccess) {
+
+                var reader = new FileReader();
+
+                reader.onloadend = function(e) {
+                    callbackSuccess(this.result);
+                }
+
+                reader.readAsText(fileEntry);
+            }
+         }, callbackFail);
     }, callbackFail);
 }
 
@@ -73,17 +79,20 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     alert('onready');
 
-
-    fileExists('myFile.txt',  function() {
-        alert('Exist');
+    //Se verifica si el archivo existe
+    fileExists('myFile.txt',  function(content) {
+        alert('File Exist - ' + content);
     }, function() {
-        alert('Doesn\'t exist');
+        alert('File Doesn\'t exist');
     });
 
+    //Se crea el archivo
     writeFile('myFile.txt', 'Lorem ipsum dolor...', function() {
-        alert('Success');
+        alert('File created succesfully!!!');
     }, function() {
-        alert('Error');
+        alert('Error creating file!!!');
     });
 
+
+    
 }
