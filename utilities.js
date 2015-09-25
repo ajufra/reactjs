@@ -1,3 +1,4 @@
+/*
 var APPPATH = 'Android/data/com.phonegap.ReactJS/files';
 
 if (typeof app !== 'undefined') {
@@ -62,4 +63,16 @@ function writeFile(filename, content, callbackSuccess, callbackFail) {
             },
             callbackFail);
     }, callbackFail);
+}
+
+*/
+
+function onDeviceReady() {
+    alert('onready');
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+}
+
+function gotFS(fileSystem) {
+    alert('gotFS');
+    //fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
 }
