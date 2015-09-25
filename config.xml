@@ -45,6 +45,8 @@
             <param name="android-package" value="org.apache.cordova.FileUtils" />
         </feature>
 
+        <icon src="reactjs.png" />
+
         <access origin="*" />
     </widget>
 

@@ -36,6 +36,7 @@ function getDirectory(callbackSuccess, callbackFail) {
         }, callbackFail);
 }
 
+/*
 function fileExists(filename, callbackSuccess, callbackFail) {
     getDirectory(function(file) {
          file.getFile( filename, { create: false }, function(fileEntry) {
@@ -51,6 +52,18 @@ function fileExists(filename, callbackSuccess, callbackFail) {
                 reader.readAsText(fileEntry);
             }
          }, callbackFail);
+    }, callbackFail);
+}
+*/
+
+function fileExists(filename, callbackSuccess, callbackFail) {
+    getDirectory(function(file) {
+        file.getFile(
+            filename, {
+                create: false
+            },
+            callbackSuccess,
+            callbackFail);
     }, callbackFail);
 }
 
@@ -73,102 +86,60 @@ function writeFile(filename, content, callbackSuccess, callbackFail) {
 }
 
 
-/*
-function gotFile(fileEntry) {
-
-    alert("on gotFile");
-
-    fileEntry.file(function(file) {
-        alert("on gotFile.fileEntry.file");
-        var reader = new FileReader();
-        alert("after reader");
-        reader.onloadend = function(e) {
-            alert(this.result);
-        }
-        alert("before readAsText");
-        reader.readAsText(file);
-    });
-
-}
-*/
-
-function win(file) {
-    alert('on win');
-    var reader = new FileReader();
-    alert('after reader');
-    reader.onloadend = function(evt) {
-        alert(evt.target.result);
-    };
-    alert('before readAsText');
-    reader.readAsText(file);
-};
-
-//------------------------------------
-
-function gotFS(fileSystem) {
+//-----------------------------------------------------------------------------------------------
+//Lectura de un archivo
+function readFile(fileSystem) {
         fileSystem.root.getFile(APPPATH+'/myFile.txt', null, gotFileEntry, fail);
-    }
+}
 
-    function gotFileEntry(fileEntry) {
-        fileEntry.file(gotFile, fail);
-    }
+function gotFileEntry(fileEntry) {
+    fileEntry.file(gotFile, fail);
+}
 
-    function gotFile(file){
-        //readDataUrl(file);
-        readAsText(file);
-    }
+function gotFile(file){
+    //readDataUrl(file);
+    readAsText(file);
+}
 
-    function readDataUrl(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as data URL");
-            console.log(evt.target.result);
-        };
-        reader.readAsDataURL(file);
-    }
+function readDataUrl(file) {
+    var reader = new FileReader();
+    reader.onloadend = function(evt) {
+        console.log("Read as data URL");
+        console.log(evt.target.result);
+    };
+    reader.readAsDataURL(file);
+}
 
-    function readAsText(file) {
-        alert("readAsText");
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            alert("Read as text - " + evt.target.result);
-        };
-        reader.readAsText(file);
-    }
+function readAsText(file) {
+    var reader = new FileReader();
+    reader.onloadend = function(evt) {
+        alert("Read as text - " + evt.target.result);
+    };
+    reader.readAsText(file);
+}
 
-    function fail(evt) {
-        console.log(evt.target.error.code);
-    }
-//------------------------------------
+function fail(evt) {
+    console.log(evt.target.error.code);
+}
+//----------------------------------------------------------------------------------------------------
 
-
+//Inicio
 document.addEventListener("deviceready", onDeviceReady, false);
 
-// device APIs are available
-//
+//Función de escritura y lectura de archivos
 function onDeviceReady() {
-
-    //Se verifica si el archivo existe
-    /*
-    fileExists('myFile.txt',  function(content) {
-        alert('File Exist - ' + content);
-    }, function() {
-        alert('File Doesn\'t exist');
-    });
-    */
 
     //Se crea el archivo
     writeFile('myFile.txt', 'Lorem ipsum dolor 2...', function() {
-        alert('File created succesfully!!!');
-        //win(APPPATH+'/myFile.txt');
-
-         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-
-
+        console.log('File created succesfully!!!');
     }, function() {
         alert('Error creating file!!!');
     });
 
-
-    
+    //Se verifica si el archivo existe
+    fileExists('myFile.txt',  function(content) {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, readFile, fail);
+    }, function() {
+        alert('Error reading files');
+    });
 }
