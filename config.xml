@@ -41,6 +41,10 @@
         <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
         <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
 
+        <feature name="File">
+            <param name="android-package" value="org.apache.cordova.FileUtils" />
+        </feature>
+
         <access origin="*" />
     </widget>
 

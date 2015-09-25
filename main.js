@@ -66,5 +66,19 @@ var DisplayTable = React.createClass({
 		);
 	}
 });
+
+alert('Init app new!');
+
+fileExists('myFile.txt',  function() {
+	alert('Exist');
+}, function() {
+	alert('Doesn\'t exist');
+});
+
+writeFile('myFile.txt', 'Lorem ipsum dolor...', function() {
+	alert('Success');
+}, function() {
+	alert('Error');
+});
  
 React.renderComponent(<InstantBox data={employees}/>,document.body);
