@@ -125,6 +125,9 @@ function fail(evt) {
 }
 //----------------------------------------------------------------------------------------------------
 
+//Inicio
+document.addEventListener("deviceready", onDeviceReady, false);
+
 //Función de escritura y lectura de archivos
 function onDeviceReady() {
 
@@ -141,4 +144,6 @@ function onDeviceReady() {
     }, function() {
         alert('Error reading files');
     });
+
+    React.renderComponent(<InstantBox data={employees}/>,document.body);
 }
