@@ -67,7 +67,7 @@ var DisplayTable = React.createClass({
 	}
 });
 
-alert('Init app new!');
+alert('Init app new 2!');
 
 fileExists('myFile.txt',  function() {
 	alert('Exist');
