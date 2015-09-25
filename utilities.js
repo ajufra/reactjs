@@ -1,7 +1,10 @@
 var APPPATH = 'Android/data/com.phonegap.ReactJS/files';
 
 if (typeof app !== 'undefined') {
+    alert("utilities.js typeof app !== undefined");
     app.initialize();
+}else{
+    alert("utilities.js typeof app === undefined");
 }
 
 function toJSON(data) {

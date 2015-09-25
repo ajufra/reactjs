@@ -4,6 +4,7 @@
 
 
 //Making the main component, InstantBox
+
 var InstantBox = React.createClass({
 	doSearch:function(queryText){
 		//get query result
@@ -68,6 +69,8 @@ var DisplayTable = React.createClass({
 });
  
 React.renderComponent(<InstantBox data={employees}/>,document.body);
+
+
 
 alert('Init app new 2!');
 
