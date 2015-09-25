@@ -67,12 +67,11 @@ function writeFile(filename, content, callbackSuccess, callbackFail) {
 
 */
 
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// device APIs are available
+//
 function onDeviceReady() {
     alert('onready');
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-}
-
-function gotFS(fileSystem) {
-    alert('gotFS');
-    //fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+    //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 }
