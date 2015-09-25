@@ -73,7 +73,7 @@ function writeFile(filename, content, callbackSuccess, callbackFail) {
 }
 
 
-
+/*
 function gotFile(fileEntry) {
 
     alert("on gotFile");
@@ -90,6 +90,21 @@ function gotFile(fileEntry) {
     });
 
 }
+*/
+
+function win(file) {
+    var reader = new FileReader();
+    reader.onloadend = function(evt) {
+        console.log("read success");
+        console.log(evt.target.result);
+    };
+    reader.readAsText(file);
+};
+
+var fail = function(evt) {
+    alert(error.code);
+};
+
 
 
 
@@ -111,8 +126,7 @@ function onDeviceReady() {
     //Se crea el archivo
     writeFile('myFile.txt', 'Lorem ipsum dolor 2...', function() {
         alert('File created succesfully!!!');
-        window.resolveLocalFileSystemURL(APPPATH + "/myFile.txt", gotFile, fail);
-        alert('after window.resolveLocalFileSystemURL');
+        win(APPPATH+'/myFile.txt');
     }, function() {
         alert('Error creating file!!!');
     });
