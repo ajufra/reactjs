@@ -106,7 +106,7 @@ function win(file) {
 //------------------------------------
 
 function gotFS(fileSystem) {
-        fileSystem.root.getFile("readme.txt", null, gotFileEntry, fail);
+        fileSystem.root.getFile(APPPATH+'/myFile.txt', null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -128,6 +128,7 @@ function gotFS(fileSystem) {
     }
 
     function readAsText(file) {
+        alert("readAsText");
         var reader = new FileReader();
         reader.onloadend = function(evt) {
             alert("Read as text - " + evt.target.result);
