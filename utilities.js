@@ -3,7 +3,9 @@ var APPPATH = 'Android/data/com.phonegap.ReactJS/files';
 
 var sourceJSON = ''; 
 
-//var deviceEmployees = []
+var deviceEmployees = []
+
+alert("utilities.js");
 /*
 if (typeof app !== 'undefined') {
     alert("utilities.js typeof app !== undefined");
@@ -118,7 +120,7 @@ function readAsText(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         sourceJSON = evt.target.result;
-        //deviceEmployees = sourceJSON;
+        deviceEmployees = sourceJSON;
     };
     reader.readAsText(file);
 }
@@ -133,6 +135,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 //Función de escritura y lectura de archivos
 function onDeviceReady() {
+
+    alert("utilities.onDeviceReady");
 
     //Se crea el archivo
     writeFile('myFile.txt', emp, function() {

@@ -2,7 +2,7 @@
    * @jsx React.DOM
  */
 
-
+alert("main.js");
 var Init = React.createClass({
 
 	// getInitialState:function(){
@@ -25,7 +25,7 @@ var Init = React.createClass({
     //},
 	
 	render:function(){
-		//alert(this.state.employees);
+		alert('Init.render');
 		return <InstantBox data={emp}/>
 	}
 });
