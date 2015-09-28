@@ -3,7 +3,7 @@ var APPPATH = 'Android/data/com.phonegap.ReactJS/files';
 
 var sourceJSON = ''; 
 
-var deviceEmployees = []
+//var deviceEmployees = []
 /*
 if (typeof app !== 'undefined') {
     alert("utilities.js typeof app !== undefined");
@@ -118,7 +118,7 @@ function readAsText(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         sourceJSON = evt.target.result;
-        deviceEmployees = sourceJSON;
+        //deviceEmployees = sourceJSON;
     };
     reader.readAsText(file);
 }

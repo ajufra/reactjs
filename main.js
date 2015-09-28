@@ -5,28 +5,28 @@
 
 var Init = React.createClass({
 
-	getInitialState:function(){
-		alert('Init.getInitialState');
-		return{
+	// getInitialState:function(){
+	// 	//alert('Init.getInitialState');
+	// 	return{
 
-			employees: []
-		}
-	},
+	// 		employees: []
+	// 	}
+	// },
 
-	componentDidMount: function() {
-		alert('Init.componentDidMount');
+	//componentDidMount: function() {
+		//alert('Init.componentDidMount');
 
 		// var _this = this;
 		// var scr1 = document.createElement('script');
 	 //    scr1.setAttribute('src', "utilities.js");
 	 //    document.getElementsByTagName('body')[0].appendChild(scr1);
 
-    	_this.setState({ employees: deviceEmployees });
-    },
+    	//this.setState({ employees: deviceEmployees });
+    //},
 	
 	render:function(){
-		alert(this.state.employees);
-		return <InstantBox data={this.state.employees}/>
+		//alert(this.state.employees);
+		return <InstantBox data={emp}/>
 	}
 });
 
