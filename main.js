@@ -14,15 +14,14 @@ var Init = React.createClass({
 	},
 
 	componentDidMount: function() {
-        var _this = this;
-        var script = document.createElement("script");
-        script.src = "utilities.js";
+		alert('Init.componentDidMount');
 
-    	_this.setState({
-            employees: deviceEmployees
-        });
+		var _this = this;
+		var scr1 = document.createElement('script');
+	    scr1.setAttribute('src', "utilities.js");
+	    document.getElementsByTagName('body')[0].appendChild(scr1);
 
-        document.body.appendChild(script);
+    	_this.setState({ employees: deviceEmployees });
     },
 	
 	render:function(){
