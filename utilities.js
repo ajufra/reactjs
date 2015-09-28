@@ -132,12 +132,12 @@ function fail(evt) {
 //----------------------------------------------------------------------------------------------------
 
 //Inicio
-//document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 //Función de escritura y lectura de archivos
-function onDeviceReady2() {
+function onDeviceReady() {
 
-    alert("utilities.onDeviceReady2");
+    alert("utilities.onDeviceReady");
 
     //Se crea el archivo
     writeFile('myFile.txt', emp, function() {

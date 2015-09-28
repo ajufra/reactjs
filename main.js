@@ -24,12 +24,18 @@ var Init = React.createClass({
     	//this.setState({ employees: deviceEmployees });
     //},
 
-    componentWillMount: function () {
-	    alert('Init.componentWillMount');
-	    document.addEventListener("deviceready", onDeviceReady2, false);
-	    this.setState({ employees: emp });
+   //  componentWillMount: function () {
+	  //   alert('Init.componentWillMount');
+	  //   this.setState({ employees: emp });
 	    
-	  },
+	  // },
+
+	componentDidMount: function() {
+		alert('Init.componentDidMount');
+		document.addEventListener("deviceready", onDeviceReady, false);
+		alert('main.componentDidMount = ' + deviceEmployees);
+		this.setState({ employees: deviceEmployees });
+	},
 	
 	render:function(){
 		alert('Init.render');
