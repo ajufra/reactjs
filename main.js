@@ -22,10 +22,11 @@ var Init = React.createClass({
             employees: deviceEmployees
         });
 
-        document.head.appendChild(script);
+        document.body.appendChild(script);
     },
 	
 	render:function(){
+		alert(this.state.employees);
 		return <InstantBox data={this.state.employees}/>
 	}
 });
