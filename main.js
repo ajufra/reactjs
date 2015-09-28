@@ -16,10 +16,10 @@ var Init = React.createClass({
 	componentDidMount: function() {
 		alert('Init.componentDidMount');
 
-		var _this = this;
-		var scr1 = document.createElement('script');
-	    scr1.setAttribute('src', "utilities.js");
-	    document.getElementsByTagName('body')[0].appendChild(scr1);
+		// var _this = this;
+		// var scr1 = document.createElement('script');
+	 //    scr1.setAttribute('src', "utilities.js");
+	 //    document.getElementsByTagName('body')[0].appendChild(scr1);
 
     	_this.setState({ employees: deviceEmployees });
     },
