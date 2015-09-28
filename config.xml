@@ -40,10 +40,12 @@
         <gap:plugin name="org.apache.cordova.network-information" source="npm" /> 
         <gap:plugin name="org.apache.cordova.splashscreen" source="npm" /> 
         <gap:plugin name="org.apache.cordova.vibration" source="npm" /> 
-
+        
+        <!-- 
         <feature name="File">
             <param name="android-package" value="org.apache.cordova.FileUtils" />
         </feature>
+        -->
 
         <icon src="reactjs.png" />
 

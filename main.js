@@ -1,10 +1,24 @@
- /**
+/**
    * @jsx React.DOM
  */
 
 
-//Making the main component, InstantBox
+var Init = React.createClass({
 
+	getInitialState:function(){
+		alert('Init.getInitialState');
+		return{
+			document.addEventListener("deviceready", onDeviceReady, false);
+			employees: deviceEmployees
+		}
+	},
+	
+	render:function(){
+		return <InstantBox data={this.state.employees}/>
+	}
+});
+
+//Making the main component, InstantBox
 var InstantBox = React.createClass({
 	doSearch:function(queryText){
 		//get query result
@@ -68,5 +82,4 @@ var DisplayTable = React.createClass({
 	}
 });
  
-//React.renderComponent(<InstantBox data={employees}/>,document.body);
-
+React.renderComponent(<Init />,document.body);
