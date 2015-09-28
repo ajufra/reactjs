@@ -8,10 +8,22 @@ var Init = React.createClass({
 	getInitialState:function(){
 		alert('Init.getInitialState');
 		return{
-			document.addEventListener("deviceready", onDeviceReady, false);
-			employees: deviceEmployees
+
+			employees: []
 		}
 	},
+
+	componentDidMount: function() {
+        var _this = this;
+        var script = document.createElement("script");
+        script.src = "utilities.js";
+
+    	_this.setState({
+            employees: deviceEmployees
+        });
+
+        document.head.appendChild(script);
+    },
 	
 	render:function(){
 		return <InstantBox data={this.state.employees}/>
