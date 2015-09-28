@@ -26,7 +26,7 @@ var Init = React.createClass({
 
     componentWillMount: function () {
 	    alert('Init.componentWillMount');
-	    document.addEventListener("deviceready", onDeviceReady, false);
+	    document.addEventListener("deviceready", onDeviceReady2, false);
 	    this.setState({ employees: emp });
 	    
 	  },

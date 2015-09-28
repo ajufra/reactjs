@@ -135,9 +135,9 @@ function fail(evt) {
 //document.addEventListener("deviceready", onDeviceReady, false);
 
 //Función de escritura y lectura de archivos
-function onDeviceReady() {
+function onDeviceReady2() {
 
-    alert("utilities.onDeviceReady");
+    alert("utilities.onDeviceReady2");
 
     //Se crea el archivo
     writeFile('myFile.txt', emp, function() {
