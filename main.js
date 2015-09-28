@@ -5,13 +5,13 @@
 alert("main.js");
 var Init = React.createClass({
 
-	// getInitialState:function(){
-	// 	//alert('Init.getInitialState');
-	// 	return{
+	getInitialState:function(){
+	 	alert('Init.getInitialState');
+	 	return{
 
-	// 		employees: []
-	// 	}
-	// },
+	 		employees: []
+	 	}
+	 },
 
 	//componentDidMount: function() {
 		//alert('Init.componentDidMount');
@@ -23,10 +23,17 @@ var Init = React.createClass({
 
     	//this.setState({ employees: deviceEmployees });
     //},
+
+    componentWillMount: function () {
+	    alert('Init.componentWillMount');
+	    //document.addEventListener("deviceready", onDeviceReady, false);
+	    this.setState({ employees: emp });
+	    
+	  },
 	
 	render:function(){
 		alert('Init.render');
-		return <InstantBox data={emp}/>
+		return <InstantBox data={this.state.employees}/>
 	}
 });
 
