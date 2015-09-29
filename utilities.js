@@ -132,7 +132,7 @@ function fail(evt) {
 //----------------------------------------------------------------------------------------------------
 
 //Inicio
-document.addEventListener("deviceready", onDeviceReady, false);
+
 
 //Función de escritura y lectura de archivos
 function onDeviceReady() {
@@ -161,4 +161,16 @@ function onDeviceReady() {
     //     var app = new App({});
     //     React.renderComponent(app, document.body);  
     // }
+}
+
+window.onload = function(){
+    var url = document.URL;
+    var isSmart = (url.indexOf("http://") === -1 && url.indexOf("https://") === -1);
+    if( isSmart ){
+        alert("onload.if");
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+    else{
+        alert("onload.else");
+    }
 }
