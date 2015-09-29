@@ -112,3 +112,18 @@ var DisplayTable = React.createClass({
 });
  
 React.renderComponent(<Init />,document.body);
+
+
+window.onload = function(){
+    var url = document.URL;
+    var isSmart = (url.indexOf("http://") === -1 && url.indexOf("https://") === -1);
+    if( isSmart ){
+        alert("onload.if");
+        document.addEventListener("deviceready", onDeviceReady, false);
+        alert('deviceEmployees2 = ' + deviceEmployees);
+        React.renderComponent(<InstantBox data={deviceEmployees}/>,document.body);
+    }
+    else{
+        alert("onload.else");
+    }
+}
