@@ -1,4 +1,4 @@
-//alert('data.js');
+alert('data.js');
 var emp=[
 {	name:'Andrés Franco 4',		id: '001'},
 {	name:'Andres Giraldo',		id: '002'},
