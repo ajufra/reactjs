@@ -121,7 +121,7 @@ function readAsText(file) {
     reader.onloadend = function(evt) {
         sourceJSON = evt.target.result;
         deviceEmployees = sourceJSON;
-        alert('deviceEmployees = ' + deviceEmployees);
+        //alert('deviceEmployees = ' + deviceEmployees);
     };
     reader.readAsText(file);
 }
@@ -137,7 +137,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //Función de escritura y lectura de archivos
 function onDeviceReady() {
 
-    alert("utilities.onDeviceReady");
+    //alert("utilities.onDeviceReady");
 
     //Se crea el archivo
     writeFile('myFile.txt', emp, function() {

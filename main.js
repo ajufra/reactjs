@@ -3,7 +3,7 @@
  */
 
 //alert("main.js");
-var Init = React.createClass({
+//var Init = React.createClass({
 
 	// getInitialState:function(){
 	//  	alert('Init.getInitialState');
@@ -36,18 +36,18 @@ var Init = React.createClass({
 	// 	this.setState({ employees: deviceEmployees, showResults: true });
 	// },
 	
-	render:function(){
+	//render:function(){
 		//alert('Init.render');
 
-		return <InstantBox data={emp}/>
+		//return <InstantBox data={emp}/>
 
 		// return (
   //           <div>
   //               { this.state.showResults ? <InstantBox data={this.state.employees}/> : null  }
   //           </div>
   //       );
-	}
-});
+	//}
+//});
 
 //Making the main component, InstantBox
 var InstantBox = React.createClass({
@@ -113,4 +113,4 @@ var DisplayTable = React.createClass({
 	}
 });
  
-React.renderComponent(<Init />,document.body);
+React.renderComponent(<InstantBox data={emp}/>,document.body);
