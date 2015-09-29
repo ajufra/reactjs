@@ -9,7 +9,8 @@ var Init = React.createClass({
 	 	alert('Init.getInitialState');
 	 	return{
 
-	 		employees: []
+	 		employees: [],
+	 		showResults: false
 	 	}
 	 },
 
@@ -24,22 +25,26 @@ var Init = React.createClass({
     	//this.setState({ employees: deviceEmployees });
     //},
 
-    componentWillMount: function () {
-	    alert('Init.componentWillMount');
-	    this.setState({ employees: emp });
+   //  componentWillMount: function () {
+	  //   alert('Init.componentWillMount');
+	  //   this.setState({ employees: emp });
 	    
-	  },
+	  // },
 
-	// componentDidMount: function() {
-	// 	alert('Init.componentDidMount');
-	// 	document.addEventListener("deviceready", onDeviceReady, false);
-	// 	alert('main.componentDidMount = ' + deviceEmployees);
-	// 	this.setState({ employees: deviceEmployees });
-	// },
+	componentDidMount: function() {
+		alert('Init.componentDidMount');
+		document.addEventListener("deviceready", onDeviceReady, false);
+		this.setState({ employees: deviceEmployees, showResults: true });
+	},
 	
 	render:function(){
 		alert('Init.render');
-		return <InstantBox data={this.state.employees}/>
+
+		return (
+            <div>
+                { this.state.showResults ? <InstantBox data={this.state.employees}/> : null  }
+            </div>
+        );
 	}
 });
 

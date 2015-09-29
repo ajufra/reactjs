@@ -3,7 +3,7 @@ var APPPATH = 'Android/data/com.phonegap.ReactJS/files';
 
 var sourceJSON = ''; 
 
-var deviceEmployees = []
+var deviceEmployees = [];
 
 alert("utilities.js");
 /*
@@ -132,7 +132,7 @@ function fail(evt) {
 //----------------------------------------------------------------------------------------------------
 
 //Inicio
-document.addEventListener("deviceready", onDeviceReady, false);
+//document.addEventListener("deviceready", onDeviceReady, false);
 
 //Función de escritura y lectura de archivos
 function onDeviceReady() {
