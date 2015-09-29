@@ -121,7 +121,7 @@ function readAsText(file) {
     reader.onloadend = function(evt) {
         sourceJSON = evt.target.result;
         deviceEmployees = sourceJSON;
-        //alert('deviceEmployees = ' + deviceEmployees);
+        alert('deviceEmployees = ' + deviceEmployees);
     };
     reader.readAsText(file);
 }
