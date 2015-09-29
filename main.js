@@ -9,8 +9,8 @@ var Init = React.createClass({
 	 	alert('Init.getInitialState');
 	 	return{
 
-	 		employees: [],
-	 		showResults: false
+	 		employees: emp,
+	 		showResults: true
 	 	}
 	 },
 
@@ -31,10 +31,10 @@ var Init = React.createClass({
 	    
 	  // },
 
-	componentDidMount: function() {
-		alert('Init.componentDidMount');
-		this.setState({ employees: deviceEmployees, showResults: true });
-	},
+	// componentDidMount: function() {
+	// 	alert('Init.componentDidMount');
+	// 	this.setState({ employees: deviceEmployees, showResults: true });
+	// },
 	
 	render:function(){
 		alert('Init.render');
