@@ -2,17 +2,17 @@
    * @jsx React.DOM
  */
 
-alert("main.js");
+//alert("main.js");
 var Init = React.createClass({
 
-	getInitialState:function(){
-	 	alert('Init.getInitialState');
-	 	return{
+	// getInitialState:function(){
+	//  	alert('Init.getInitialState');
+	//  	return{
 
-	 		employees: emp,
-	 		showResults: true
-	 	}
-	 },
+	//  		employees: [],
+	//  		showResults: false
+	//  	}
+	//  },
 
 	//componentDidMount: function() {
 		//alert('Init.componentDidMount');
@@ -37,13 +37,15 @@ var Init = React.createClass({
 	// },
 	
 	render:function(){
-		alert('Init.render');
+		//alert('Init.render');
 
-		return (
-            <div>
-                { this.state.showResults ? <InstantBox data={this.state.employees}/> : null  }
-            </div>
-        );
+		return <InstantBox data={emp}/>
+
+		// return (
+  //           <div>
+  //               { this.state.showResults ? <InstantBox data={this.state.employees}/> : null  }
+  //           </div>
+  //       );
 	}
 });
 

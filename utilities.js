@@ -5,7 +5,7 @@ var sourceJSON = '';
 
 var deviceEmployees = [];
 
-alert("utilities.js");
+//alert("utilities.js");
 /*
 if (typeof app !== 'undefined') {
     alert("utilities.js typeof app !== undefined");
