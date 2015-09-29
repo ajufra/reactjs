@@ -5,7 +5,7 @@ var sourceJSON = '';
 
 var deviceEmployees = [];
 
-//alert("utilities.js");
+alert("utilities.js");
 /*
 if (typeof app !== 'undefined') {
     alert("utilities.js typeof app !== undefined");
@@ -137,7 +137,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //Función de escritura y lectura de archivos
 function onDeviceReady() {
 
-    //alert("utilities.onDeviceReady");
+    alert("utilities.onDeviceReady");
 
     //Se crea el archivo
     writeFile('myFile.txt', emp, function() {
