@@ -33,7 +33,6 @@ var Init = React.createClass({
 
 	componentDidMount: function() {
 		alert('Init.componentDidMount');
-		document.addEventListener("deviceready", onDeviceReady, false);
 		this.setState({ employees: deviceEmployees, showResults: true });
 	},
 	
