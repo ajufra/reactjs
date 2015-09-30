@@ -122,7 +122,7 @@ function readAsText(file) {
     reader.onloadend = function(evt) {
         sourceJSON = evt.target.result;
         deviceEmployees = sourceJSON;
-        alert('Lectura desde el dispostivo = ' + deviceEmployees);
+        //alert('Lectura desde el dispostivo = ' + deviceEmployees);
         
     };
     reader.readAsText(file);
@@ -139,7 +139,7 @@ function fail(evt) {
 //Función de escritura y lectura de archivos
 function onDeviceReady() {
 
-    alert("Dispositivo listo!!!");
+    //alert("Dispositivo listo!!!");
 
     //Se crea el archivo
     writeFile('myFile.txt', emp, function() {

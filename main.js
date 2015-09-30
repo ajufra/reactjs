@@ -116,6 +116,7 @@ var Enter = React.createClass({
         return { showB: false };
     },
     onClick: function() {
+    	alert("onc");
         this.setState({ showB: true });
     },
     render: function() {
