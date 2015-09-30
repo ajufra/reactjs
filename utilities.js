@@ -4,7 +4,7 @@ var APPPATH = 'Android/data/com.phonegap.ReactJS/files';
 var sourceJSON = ''; 
 
 var deviceEmployees = [];
-//var deviceEmployees = [{    name:'Andrés Franco 4',     id: '001'},];
+//var deviceEmployees = [{    name:'Andrés Franco 4',     id: '001'},{    name:'Andres Giraldo',      id: '002'},];
 
 //alert("utilities.js");
 /*

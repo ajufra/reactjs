@@ -6,11 +6,10 @@
 var Init = React.createClass({
 
 	getInitialState:function(){
-	 	alert('Init.getInitialState');
+	 	//alert('Init.getInitialState');
 	 	return{
 
-	 		employees: deviceEmployees,
-	 		showResults: true
+	 		employees: deviceEmployees
 	 	}
 	 },
 
@@ -37,11 +36,11 @@ var Init = React.createClass({
 	// },
 	
 	render:function(){
-		alert('Init.render');
+		//alert('Init.render');
 
 		return (
             <div>
-                { this.state.showResults ? <InstantBox data={this.state.employees}/> : null  }
+                { <InstantBox data={this.state.employees}/> }
             </div>
         );
 	}
@@ -116,11 +115,11 @@ var Enter = React.createClass({
         return { showB: false };
     },
     onClick: function() {
-    	alert("onc");
+    	//alert("onc");
         this.setState({ showB: true });
     },
     render: function() {
-    	alert('Enter.render');
+    	//alert('Enter.render');
         return (
             <div>
                 <button onClick={this.onClick}>Ingresar</button>
