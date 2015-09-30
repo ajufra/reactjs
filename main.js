@@ -9,7 +9,7 @@ var Init = React.createClass({
 	 	//alert('Init.getInitialState');
 	 	return{
 
-	 		employees: deviceEmployees
+	 		employees: emp
 	 	}
 	 },
 
@@ -129,4 +129,4 @@ var Enter = React.createClass({
     }
 });
  
-React.renderComponent(<Enter />,document.body);
+React.renderComponent(<Init />,document.body);
