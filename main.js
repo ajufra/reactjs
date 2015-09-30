@@ -44,8 +44,8 @@ var Init = React.createClass({
 
 		return (
             <div>
-                	<button onClick={this.onClickB}>Ingresar</button>
-                	{ this.state.showB ? <InstantBox data={this.state.employees}/>  : ' false' }
+                	
+                	 <InstantBox data={this.state.employees}/> 
                 	
                 
             </div>
