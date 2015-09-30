@@ -13,7 +13,7 @@ var Init = React.createClass({
 	 	}
 	 },
 	 onClickB: function() {
-    	//alert("onc");
+    	alert("onClickB");
         this.setState({ showB: true, employees: deviceEmployees });
     },
 
@@ -40,13 +40,13 @@ var Init = React.createClass({
 	// },
 	
 	render:function(){
-		//alert('Init.render');
+		alert('Init.render.showB = ' + this.state.showB);
 
 		return (
             <div>
                 
                 	<button onClick={this.onClickB}>Ingresar</button>
-                	{ this.state.showB ? <InstantBox data={this.state.employees}/>  : null }
+                	{ this.state.showB ? <InstantBox data={this.state.employees}/>  : ' false' }
                 	
                 
             </div>
@@ -70,6 +70,7 @@ var InstantBox = React.createClass({
 		})
 	},
 	getInitialState:function(){
+		alert('InstantBox.getInitialState');
 		return{
 			query:'',
 			filteredData: this.props.data
