@@ -2,11 +2,11 @@
    * @jsx React.DOM
  */
 
-alert("main.js");
+//alert("main.js");
 var Init = React.createClass({
 
 	getInitialState:function(){
-	 	alert('Init.getInitialState');
+	 	//alert('Init.getInitialState');
 	 	return{
 
 	 		employees: [],
@@ -32,12 +32,12 @@ var Init = React.createClass({
 	  // },
 
 	componentDidMount: function() {
-		alert('Init.componentDidMount');
+		//alert('Init.componentDidMount');
 		this.setState({ employees: deviceEmployees, showResults: true });
 	},
 	
 	render:function(){
-		alert('Init.render');
+		//alert('Init.render');
 
 		return (
             <div>
@@ -110,20 +110,22 @@ var DisplayTable = React.createClass({
 		);
 	}
 });
+
+var Enter = React.createClass({
+    getInitialState: function() {
+        return { showB: false };
+    },
+    onClick: function() {
+        this.setState({ showB: true });
+    },
+    render: function() {
+        return (
+            <div>
+                <button onClick={this.onClick}>Ingresar</button>
+                { this.state.showB ? <Init /> : null }
+            </div>
+        );
+    }
+});
  
-React.renderComponent(<Init />,document.body);
-
-
-window.onload = function(){
-    var url = document.URL;
-    var isSmart = (url.indexOf("http://") === -1 && url.indexOf("https://") === -1);
-    if( isSmart ){
-        alert("onload.if");
-        document.addEventListener("deviceready", onDeviceReady, false);
-        alert('deviceEmployees2 = ' + deviceEmployees);
-        React.renderComponent(<InstantBox data={deviceEmployees}/>,document.body);
-    }
-    else{
-        alert("onload.else");
-    }
-}
+React.renderComponent(<Enter />,document.body);
