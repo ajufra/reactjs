@@ -44,8 +44,8 @@ var Init = React.createClass({
 
 		return (
             <div>
-                	
-                	 <InstantBox data={this.state.employees}/> 
+                	<button onClick={this.onClickB}>Ingresar</button>
+                	{  <InstantBox data={this.state.employees}/>   }
                 	
                 
             </div>
