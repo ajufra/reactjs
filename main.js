@@ -8,10 +8,14 @@ var Init = React.createClass({
 	getInitialState:function(){
 	 	//alert('Init.getInitialState');
 	 	return{
-
-	 		employees: emp
+			showB: false,
+	 		employees: []
 	 	}
 	 },
+	 onClickB: function() {
+    	//alert("onc");
+        this.setState({ showB: true, employees: deviceEmployees });
+    },
 
 	//componentDidMount: function() {
 		//alert('Init.componentDidMount');
@@ -40,7 +44,11 @@ var Init = React.createClass({
 
 		return (
             <div>
-                { <InstantBox data={this.state.employees}/> }
+                
+                	<button onClick={this.onClickB}>Ingresar</button>
+                	{ this.state.showB ? <InstantBox data={this.state.employees}/>  : null }
+                	
+                
             </div>
         );
 	}
@@ -110,23 +118,23 @@ var DisplayTable = React.createClass({
 	}
 });
 
-var Enter = React.createClass({
-    getInitialState: function() {
-        return { showB: false };
-    },
-    onClick: function() {
-    	//alert("onc");
-        this.setState({ showB: true });
-    },
-    render: function() {
-    	//alert('Enter.render');
-        return (
-            <div>
-                <button onClick={this.onClick}>Ingresar</button>
-                { this.state.showB ? <Init /> : null }
-            </div>
-        );
-    }
-});
+// var Enter = React.createClass({
+//     getInitialState: function() {
+//         return { showB: false };
+//     },
+//     onClick: function() {
+//     	//alert("onc");
+//         this.setState({ showB: true });
+//     },
+//     render: function() {
+//     	//alert('Enter.render');
+//         return (
+//             <div>
+//                 <button onClick={this.onClick}>Ingresar</button>
+//                 { this.state.showB ? <Init /> : null }
+//             </div>
+//         );
+//     }
+// });
  
 React.renderComponent(<Init />,document.body);
