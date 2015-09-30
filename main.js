@@ -22,6 +22,7 @@ var Init = React.createClass({
 	    });
 
 
+alert('this.setState');
         this.setState({ showB: true, employees: deviceEmployees });
     },
 

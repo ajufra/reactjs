@@ -121,7 +121,7 @@ function readAsText(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         sourceJSON = evt.target.result;
-        deviceEmployees = sourceJSON;
+        deviceEmployees = JSON.parse(sourceJSON);
         alert('Lectura desde el dispostivo = ' + deviceEmployees);
         
     };
