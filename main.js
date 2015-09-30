@@ -14,6 +14,14 @@ var Init = React.createClass({
 	 },
 	 onClickB: function() {
     	//alert("onClickB");
+
+    	fileExists('myFile.txt',  function(content) {
+	        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, readFile, fail);
+	    }, function() {
+	        alert('Error reading files');
+	    });
+
+
         this.setState({ showB: true, employees: deviceEmployees });
     },
 
@@ -45,7 +53,7 @@ var Init = React.createClass({
 		return (
             <div>
                 	<button onClick={this.onClickB}>Ingresar</button>
-                	{  <InstantBox data={this.state.employees}/>   }
+                	<InstantBox data={this.state.employees}/>
                 	
                 
             </div>
@@ -76,7 +84,7 @@ var InstantBox = React.createClass({
 		}
 	},
 	render:function(){
-		alert('InstantBox.render');
+		//alert('InstantBox.render');
 		return (
 			<div className="InstantBox">
 				<h2>Instant Search</h2>
@@ -93,14 +101,14 @@ var SearchBox = React.createClass({
 		this.props.doSearch(query);
 	},
 	render:function(){
-		alert('SearchBox.render');
+		//alert('SearchBox.render');
 		return <input type="text" ref="searchInput" placeholder="Search Name" value={this.props.query} onChange={this.doSearch}/>
 	}
 });
 
 var DisplayTable = React.createClass({
 	render:function(){
-		alert('DisplayTable.render');
+		//alert('DisplayTable.render');
 		//making the rows to display
 		var rows=[];
 		this.props.data.forEach(function(person) {
