@@ -9,20 +9,16 @@ var Init = React.createClass({
 	 	//alert('Init.getInitialState');
 	 	return{
 			showB: false,
-	 		employees: []
+	 		employees: emp
 	 	}
 	 },
 	 onClickB: function() {
     	//alert("onClickB");
 
-    	fileExists('myFile.txt',  function(content) {
-	        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, readFile, fail);
-	    }, function() {
-	        alert('Error reading files');
-	    });
+    	
 
 
-alert('this.setState');
+//alert('this.setState');
         this.setState({ showB: true, employees: deviceEmployees });
     },
 
@@ -53,7 +49,7 @@ alert('this.setState');
 
 		return (
             <div>
-                	<button onClick={this.onClickB}>Ingresar</button>
+                	
                 	<InstantBox data={this.state.employees}/>
                 	
                 

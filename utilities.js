@@ -121,7 +121,7 @@ function readAsText(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         sourceJSON = evt.target.result;
-        deviceEmployees = JSON.parse(sourceJSON);
+        deviceEmployees = sourceJSON;
         alert('Lectura desde el dispostivo = ' + deviceEmployees);
         
     };
@@ -149,11 +149,11 @@ function onDeviceReady() {
     });
 
     //Se verifica si el archivo existe
-    // fileExists('myFile.txt',  function(content) {
-    //     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, readFile, fail);
-    // }, function() {
-    //     alert('Error reading files');
-    // });
+    fileExists('myFile.txt',  function(content) {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, readFile, fail);
+    }, function() {
+        alert('Error reading files');
+    });
 
     //React.renderComponent(<InstantBox data={employees}/>,document.body);
 
