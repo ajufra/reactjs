@@ -6,11 +6,11 @@
 var Init = React.createClass({
 
 	getInitialState:function(){
-	 	//alert('Init.getInitialState');
+	 	alert('Init.getInitialState');
 	 	return{
 
-	 		employees: [],
-	 		showResults: false
+	 		employees: deviceEmployees,
+	 		showResults: true
 	 	}
 	 },
 
@@ -31,13 +31,13 @@ var Init = React.createClass({
 	    
 	  // },
 
-	componentDidMount: function() {
-		//alert('Init.componentDidMount');
-		this.setState({ employees: deviceEmployees, showResults: true });
-	},
+	// componentDidMount: function() {
+	// 	alert('Init.componentDidMount');
+	// 	this.setState({ employees: deviceEmployees, showResults: true });
+	// },
 	
 	render:function(){
-		//alert('Init.render');
+		alert('Init.render');
 
 		return (
             <div>
@@ -120,6 +120,7 @@ var Enter = React.createClass({
         this.setState({ showB: true });
     },
     render: function() {
+    	alert('Enter.render');
         return (
             <div>
                 <button onClick={this.onClick}>Ingresar</button>
