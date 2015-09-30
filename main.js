@@ -13,7 +13,7 @@ var Init = React.createClass({
 	 	}
 	 },
 	 onClickB: function() {
-    	alert("onClickB");
+    	//alert("onClickB");
         this.setState({ showB: true, employees: deviceEmployees });
     },
 
@@ -40,11 +40,10 @@ var Init = React.createClass({
 	// },
 	
 	render:function(){
-		alert('Init.render.showB = ' + this.state.showB);
+		//alert('Init.render.showB = ' + this.state.showB);
 
 		return (
             <div>
-                
                 	<button onClick={this.onClickB}>Ingresar</button>
                 	{ this.state.showB ? <InstantBox data={this.state.employees}/>  : ' false' }
                 	
@@ -70,13 +69,14 @@ var InstantBox = React.createClass({
 		})
 	},
 	getInitialState:function(){
-		alert('InstantBox.getInitialState');
+		
 		return{
 			query:'',
 			filteredData: this.props.data
 		}
 	},
 	render:function(){
+		alert('InstantBox.render');
 		return (
 			<div className="InstantBox">
 				<h2>Instant Search</h2>
@@ -93,12 +93,14 @@ var SearchBox = React.createClass({
 		this.props.doSearch(query);
 	},
 	render:function(){
+		alert('SearchBox.render');
 		return <input type="text" ref="searchInput" placeholder="Search Name" value={this.props.query} onChange={this.doSearch}/>
 	}
 });
 
 var DisplayTable = React.createClass({
 	render:function(){
+		alert('DisplayTable.render');
 		//making the rows to display
 		var rows=[];
 		this.props.data.forEach(function(person) {
